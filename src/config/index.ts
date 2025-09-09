@@ -2,7 +2,7 @@ import "dotenv/config";
 import { config } from "dotenv";
 
 export interface Configs {
-  baseUrl?: string;
+  webUrl?: string;
   databaseUrl?: string;
   databaseDriver?: string;
   databaseProvider?: string;
@@ -18,17 +18,17 @@ export interface Configs {
 
 export function getConfigs() {
   const configs: Configs = {
-    baseUrl: "http://localhost:3000",
+    webUrl: "http://localhost:3000",
   };
 
   if (typeof window !== "undefined") {
     // browser side
-    configs.baseUrl = process.env.NEXT_PUBLIC_BASE_URL || window.location.href;
+    configs.webUrl = process.env.NEXT_PUBLIC_WEB_URL || window.location.href;
   } else {
-    config({ path: ".env" });
-    config({ path: ".env.local" });
-    config({ path: ".env.development" });
-    config({ path: ".env.production" });
+    // config({ path: ".env" });
+    // config({ path: ".env.local" });
+    // config({ path: ".env.development" });
+    // config({ path: ".env.production" });
 
     // database
     configs.databaseUrl = process.env.DATABASE_URL || "";
@@ -36,7 +36,7 @@ export function getConfigs() {
     configs.databaseProvider = process.env.DATABASE_PROVIDER || "";
 
     // auth
-    configs.betterAuthUrl = process.env.BETTER_AUTH_URL || configs.baseUrl;
+    configs.betterAuthUrl = process.env.BETTER_AUTH_URL || configs.webUrl;
     configs.betterAuthSecret = process.env.BETTER_AUTH_SECRET || "";
     configs.googleClientId = process.env.GOOGLE_CLIENT_ID || "";
     configs.googleClientSecret = process.env.GOOGLE_CLIENT_SECRET || "";

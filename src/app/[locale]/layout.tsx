@@ -1,6 +1,6 @@
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
-import { routing } from "@/config/locale";
+import { routing } from "@/core/i18n/config";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata({

@@ -3,6 +3,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { configs } from "@/config";
 import { db } from "@/core/db";
 import * as schema from "@/config/db/schema";
+import { getSocialProviders } from "./config";
 
 export const auth = betterAuth({
   database: drizzleAdapter(db(), {
@@ -26,24 +27,4 @@ function getDatabaseProvider(): "sqlite" | "pg" | "mysql" {
         `Unsupported database provider for auth: ${configs.databaseProvider}`
       );
   }
-}
-
-function getSocialProviders() {
-  const providers: any = {};
-
-  if (true) {
-    providers.google = {
-      clientId: configs.googleClientId,
-      clientSecret: configs.googleClientSecret,
-    };
-  }
-
-  if (true) {
-    providers.github = {
-      clientId: configs.githubClientId,
-      clientSecret: configs.githubClientSecret,
-    };
-  }
-
-  return providers;
 }

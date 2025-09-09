@@ -6,4 +6,4 @@ export const authClient = createAuthClient({
   secret: configs.betterAuthSecret,
 });
 
-export const { signIn, signUp, useSession } = authClient;
+export const { signIn, signUp, signOut, useSession } = authClient;

@@ -1,4 +1,4 @@
-import "@/config/styles/globals.css";
+import "@/config/style/global.css";
 
 import { getLocale, setRequestLocale } from "next-intl/server";
 import { locales } from "@/config/locale";
@@ -13,7 +13,7 @@ export default async function RootLayout({
   setRequestLocale(locale);
 
   const configs = getConfigs();
-  const baseUrl = configs.baseUrl || "";
+  const baseUrl = configs.webUrl || "";
   const adsenseCode = configs.adsenseCode || "";
 
   return (

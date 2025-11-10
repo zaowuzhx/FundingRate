@@ -20,7 +20,7 @@ import { Tabs, TabsList, TabsTrigger } from '@/shared/components/ui/tabs';
 import { useAppContext } from '@/shared/contexts/app';
 import { getCookie } from '@/shared/lib/cookie';
 import { cn } from '@/shared/lib/utils';
-import { Subscription } from '@/shared/services/subscription';
+import { Subscription } from '@/shared/models/subscription';
 import {
   PricingItem,
   Pricing as PricingType,

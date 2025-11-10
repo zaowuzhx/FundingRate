@@ -6,7 +6,7 @@ import { TableCard } from '@/shared/blocks/table';
 import {
   getSubscriptions,
   getSubscriptionsCount,
-} from '@/shared/services/subscription';
+} from '@/shared/models/subscription';
 import { Crumb, Tab } from '@/shared/types/blocks/common';
 import { type Table } from '@/shared/types/blocks/table';
 

@@ -3,13 +3,13 @@ import { getTranslations } from 'next-intl/server';
 
 import { Empty } from '@/shared/blocks/common';
 import { FormCard } from '@/shared/blocks/form';
-import { getPaymentService } from '@/shared/services/payment';
 import {
   findSubscriptionBySubscriptionNo,
   SubscriptionStatus,
   updateSubscriptionBySubscriptionNo,
-} from '@/shared/services/subscription';
-import { getUserInfo } from '@/shared/services/user';
+} from '@/shared/models/subscription';
+import { getUserInfo } from '@/shared/models/user';
+import { getPaymentService } from '@/shared/services/payment';
 import { Crumb } from '@/shared/types/blocks/common';
 import { Form } from '@/shared/types/blocks/form';
 

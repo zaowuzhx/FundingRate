@@ -4,13 +4,13 @@ import { PERMISSIONS, requirePermission } from '@/core/rbac';
 import { Header, Main, MainHeader } from '@/shared/blocks/dashboard';
 import { FormCard } from '@/shared/blocks/form';
 import { getUuid } from '@/shared/lib/hash';
-import { addPost, NewPost, PostStatus, PostType } from '@/shared/services/post';
+import { addPost, NewPost, PostStatus, PostType } from '@/shared/models/post';
 import {
   getTaxonomies,
   TaxonomyStatus,
   TaxonomyType,
-} from '@/shared/services/taxonomy';
-import { getUserInfo } from '@/shared/services/user';
+} from '@/shared/models/taxonomy';
+import { getUserInfo } from '@/shared/models/user';
 import { Crumb } from '@/shared/types/blocks/common';
 import { Form } from '@/shared/types/blocks/form';
 

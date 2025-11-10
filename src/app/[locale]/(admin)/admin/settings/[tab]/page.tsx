@@ -3,13 +3,13 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { PERMISSIONS, requireAllPermissions } from '@/core/rbac';
 import { Header, Main, MainHeader } from '@/shared/blocks/dashboard';
 import { FormCard } from '@/shared/blocks/form';
-import { getConfigs, saveConfigs } from '@/shared/services/config';
+import { getConfigs, saveConfigs } from '@/shared/models/config';
+import { getUserInfo } from '@/shared/models/user';
 import {
   getSettingGroups,
   getSettings,
   getSettingTabs,
 } from '@/shared/services/settings';
-import { getUserInfo } from '@/shared/services/user';
 import { Crumb } from '@/shared/types/blocks/common';
 import { Form as FormType } from '@/shared/types/blocks/form';
 

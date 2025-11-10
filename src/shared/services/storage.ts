@@ -1,5 +1,5 @@
 import { R2Provider, S3Provider, StorageManager } from '@/extensions/storage';
-import { Configs, getAllConfigs } from '@/shared/services/config';
+import { Configs, getAllConfigs } from '@/shared/models/config';
 
 /**
  * get storage service with configs

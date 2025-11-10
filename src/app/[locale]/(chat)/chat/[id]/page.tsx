@@ -2,8 +2,8 @@ import { UIMessage } from 'ai';
 
 import { redirect } from '@/core/i18n/navigation';
 import { ChatBox } from '@/shared/blocks/chat/box';
-import { findChatById } from '@/shared/services/chat';
-import { getChatMessages } from '@/shared/services/chat_message';
+import { findChatById } from '@/shared/models/chat';
+import { getChatMessages } from '@/shared/models/chat_message';
 import { Chat } from '@/shared/types/chat';
 
 export default async function ChatPage({

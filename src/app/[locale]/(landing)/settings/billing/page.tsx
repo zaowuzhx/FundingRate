@@ -11,8 +11,8 @@ import {
   getSubscriptionsCount,
   Subscription,
   SubscriptionStatus,
-} from '@/shared/services/subscription';
-import { getUserInfo } from '@/shared/services/user';
+} from '@/shared/models/subscription';
+import { getUserInfo } from '@/shared/models/user';
 import { Button as ButtonType, Tab } from '@/shared/types/blocks/common';
 import { type Table } from '@/shared/types/blocks/table';
 

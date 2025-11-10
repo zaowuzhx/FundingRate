@@ -1,10 +1,10 @@
 import { respData, respErr } from '@/shared/lib/resp';
-import { ChatStatus, getChats, getChatsCount } from '@/shared/services/chat';
+import { ChatStatus, getChats, getChatsCount } from '@/shared/models/chat';
 import {
   getChatMessages,
   getChatMessagesCount,
-} from '@/shared/services/chat_message';
-import { getUserInfo } from '@/shared/services/user';
+} from '@/shared/models/chat_message';
+import { getUserInfo } from '@/shared/models/user';
 
 export async function POST(req: Request) {
   try {

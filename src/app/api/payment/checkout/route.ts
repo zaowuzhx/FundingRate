@@ -8,15 +8,15 @@ import {
 } from '@/extensions/payment';
 import { getSnowId, getUuid } from '@/shared/lib/hash';
 import { respData, respErr } from '@/shared/lib/resp';
-import { getAllConfigs } from '@/shared/services/config';
+import { getAllConfigs } from '@/shared/models/config';
 import {
   createOrder,
   NewOrder,
   OrderStatus,
   updateOrderByOrderNo,
-} from '@/shared/services/order';
+} from '@/shared/models/order';
+import { getUserInfo } from '@/shared/models/user';
 import { getPaymentService } from '@/shared/services/payment';
-import { getUserInfo } from '@/shared/services/user';
 
 export async function POST(req: Request) {
   try {

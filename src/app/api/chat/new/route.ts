@@ -1,8 +1,8 @@
 import { generateId } from 'ai';
 
 import { respData, respErr } from '@/shared/lib/resp';
-import { ChatStatus, createChat, NewChat } from '@/shared/services/chat';
-import { getUserInfo } from '@/shared/services/user';
+import { ChatStatus, createChat, NewChat } from '@/shared/models/chat';
+import { getUserInfo } from '@/shared/models/user';
 
 export async function POST(req: Request) {
   try {

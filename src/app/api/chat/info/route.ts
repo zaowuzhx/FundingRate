@@ -1,6 +1,6 @@
 import { respData, respErr } from '@/shared/lib/resp';
-import { findChatById } from '@/shared/services/chat';
-import { getUserInfo } from '@/shared/services/user';
+import { findChatById } from '@/shared/models/chat';
+import { getUserInfo } from '@/shared/models/user';
 
 export async function POST(req: Request) {
   try {

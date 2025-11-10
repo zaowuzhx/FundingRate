@@ -8,7 +8,7 @@ import {
   CreditTransactionType,
   getCredits,
   getCreditsCount,
-} from '@/shared/services/credit';
+} from '@/shared/models/credit';
 import { Crumb, Tab } from '@/shared/types/blocks/common';
 import { type Table } from '@/shared/types/blocks/table';
 

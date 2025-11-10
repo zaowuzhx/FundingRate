@@ -8,13 +8,13 @@ import {
   PostType as DBPostType,
   getPosts,
   PostStatus,
-} from '@/shared/services/post';
+} from '@/shared/models/post';
 import {
   findTaxonomy,
   getTaxonomies,
   TaxonomyStatus,
   TaxonomyType,
-} from '@/shared/services/taxonomy';
+} from '@/shared/models/taxonomy';
 import {
   Blog as BlogType,
   Category as CategoryType,

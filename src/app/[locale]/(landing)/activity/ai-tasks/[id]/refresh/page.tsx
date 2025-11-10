@@ -3,8 +3,8 @@ import { getTranslations } from 'next-intl/server';
 import { redirect } from '@/core/i18n/navigation';
 import { AITaskStatus } from '@/extensions/ai';
 import { Empty } from '@/shared/blocks/common';
+import { findAITaskById, updateAITaskById } from '@/shared/models/ai_task';
 import { getAIService } from '@/shared/services/ai';
-import { findAITaskById, updateAITaskById } from '@/shared/services/ai_task';
 
 export default async function RefreshAITaskPage({
   params,

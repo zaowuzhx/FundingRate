@@ -4,11 +4,7 @@ import { PERMISSIONS, requirePermission } from '@/core/rbac';
 import { PaymentType } from '@/extensions/payment';
 import { Header, Main, MainHeader } from '@/shared/blocks/dashboard';
 import { TableCard } from '@/shared/blocks/table';
-import {
-  getOrders,
-  getOrdersCount,
-  OrderStatus,
-} from '@/shared/services/order';
+import { getOrders, getOrdersCount, OrderStatus } from '@/shared/models/order';
 import { Crumb, Filter, Search, Tab } from '@/shared/types/blocks/common';
 import { type Table } from '@/shared/types/blocks/table';
 

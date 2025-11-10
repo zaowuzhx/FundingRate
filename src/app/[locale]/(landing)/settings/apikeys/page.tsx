@@ -7,8 +7,8 @@ import {
   ApikeyStatus,
   getApikeys,
   getApikeysCount,
-} from '@/shared/services/apikey';
-import { getUserInfo } from '@/shared/services/user';
+} from '@/shared/models/apikey';
+import { getUserInfo } from '@/shared/models/user';
 import { Button } from '@/shared/types/blocks/common';
 import { type Table } from '@/shared/types/blocks/table';
 

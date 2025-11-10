@@ -3,7 +3,7 @@ import {
   AffonsoAffiliateProvider,
   PromoteKitAffiliateProvider,
 } from '@/extensions/affiliate';
-import { Configs, getAllConfigs } from '@/shared/services/config';
+import { Configs, getAllConfigs } from '@/shared/models/config';
 
 /**
  * get affiliate manager with configs

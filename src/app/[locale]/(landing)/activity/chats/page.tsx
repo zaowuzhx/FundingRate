@@ -7,8 +7,8 @@ import {
   ChatStatus,
   getChats,
   getChatsCount,
-} from '@/shared/services/chat';
-import { getUserInfo } from '@/shared/services/user';
+} from '@/shared/models/chat';
+import { getUserInfo } from '@/shared/models/user';
 import { Button, Tab } from '@/shared/types/blocks/common';
 import { type Table } from '@/shared/types/blocks/table';
 

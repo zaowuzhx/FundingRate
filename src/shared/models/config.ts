@@ -2,7 +2,7 @@ import { db } from '@/core/db';
 import { envConfigs } from '@/config';
 import { config } from '@/config/db/schema';
 
-import { publicSettingNames } from './settings';
+import { publicSettingNames } from '../services/settings';
 
 export type Config = typeof config.$inferSelect;
 export type NewConfig = typeof config.$inferInsert;

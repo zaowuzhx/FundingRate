@@ -4,9 +4,9 @@ import { PERMISSIONS, requirePermission } from '@/core/rbac';
 import { Header, Main, MainHeader } from '@/shared/blocks/dashboard';
 import { TableCard } from '@/shared/blocks/table';
 import { Badge } from '@/shared/components/ui/badge';
-import { getRemainingCredits } from '@/shared/services/credit';
+import { getRemainingCredits } from '@/shared/models/credit';
+import { getUsers, getUsersCount, User } from '@/shared/models/user';
 import { getUserRoles } from '@/shared/services/rbac';
-import { getUsers, getUsersCount, User } from '@/shared/services/user';
 import { Crumb, Search } from '@/shared/types/blocks/common';
 import { type Table } from '@/shared/types/blocks/table';
 

@@ -1,11 +1,11 @@
 import { respData, respErr } from '@/shared/lib/resp';
-import { getAIService } from '@/shared/services/ai';
 import {
   findAITaskById,
   UpdateAITask,
   updateAITaskById,
-} from '@/shared/services/ai_task';
-import { getUserInfo } from '@/shared/services/user';
+} from '@/shared/models/ai_task';
+import { getUserInfo } from '@/shared/models/user';
+import { getAIService } from '@/shared/services/ai';
 
 export async function POST(req: Request) {
   try {

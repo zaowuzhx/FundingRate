@@ -10,8 +10,8 @@ import {
   getCredits,
   getCreditsCount,
   getRemainingCredits,
-} from '@/shared/services/credit';
-import { getUserInfo } from '@/shared/services/user';
+} from '@/shared/models/credit';
+import { getUserInfo } from '@/shared/models/user';
 import { Tab } from '@/shared/types/blocks/common';
 import { type Table } from '@/shared/types/blocks/table';
 

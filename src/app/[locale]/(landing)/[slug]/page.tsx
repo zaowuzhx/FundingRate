@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { getThemePage } from '@/core/theme';
 import { envConfigs } from '@/config';
-import { getLocalPage } from '@/shared/services/post';
+import { getLocalPage } from '@/shared/models/post';
 
 export async function generateMetadata({
   params,

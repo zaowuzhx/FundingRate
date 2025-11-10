@@ -1,5 +1,6 @@
 import { PaymentEventType, SubscriptionCycleType } from '@/extensions/payment';
-import { findOrderByOrderNo } from '@/shared/services/order';
+import { findOrderByOrderNo } from '@/shared/models/order';
+import { findSubscriptionByProviderSubscriptionId } from '@/shared/models/subscription';
 import {
   getPaymentService,
   handleCheckoutSuccess,
@@ -7,7 +8,6 @@ import {
   handleSubscriptionRenewal,
   handleSubscriptionUpdated,
 } from '@/shared/services/payment';
-import { findSubscriptionByProviderSubscriptionId } from '@/shared/services/subscription';
 
 export async function POST(
   req: Request,

@@ -5,7 +5,7 @@ import { db } from '@/core/db';
 import { envConfigs } from '@/config';
 import * as schema from '@/config/db/schema';
 import { getUuid } from '@/shared/lib/hash';
-import { getAllConfigs } from '@/shared/services/config';
+import { getAllConfigs } from '@/shared/models/config';
 
 // Static auth options - NO database connection
 // This ensures zero database calls during build time

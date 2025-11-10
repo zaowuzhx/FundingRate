@@ -1,4 +1,5 @@
 import { redirect } from '@/core/i18n/navigation';
+import { getSignUser } from '@/shared/models/user';
 import {
   hasAllPermissions,
   hasAnyPermission,
@@ -6,7 +7,6 @@ import {
   hasPermission,
   hasRole,
 } from '@/shared/services/rbac';
-import { getSignUser } from '@/shared/services/user';
 
 // Permission constants
 export const PERMISSIONS = {

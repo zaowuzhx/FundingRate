@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-import { getAllConfigs } from '@/shared/services/config';
+import { getAllConfigs } from '@/shared/models/config';
 
 export async function GET() {
   try {

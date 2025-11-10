@@ -8,12 +8,12 @@ import {
 import { Empty } from '@/shared/blocks/common';
 import { Header, Main, MainHeader } from '@/shared/blocks/dashboard';
 import { FormCard } from '@/shared/blocks/form';
+import { findUserById } from '@/shared/models/user';
 import {
   assignRolesToUser,
   getRoles,
   getUserRoles,
 } from '@/shared/services/rbac';
-import { findUserById } from '@/shared/services/user';
 import { Crumb } from '@/shared/types/blocks/common';
 import { Form } from '@/shared/types/blocks/form';
 

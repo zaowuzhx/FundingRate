@@ -7,7 +7,7 @@ import {
   PayPalProvider,
   StripeProvider,
 } from '@/extensions/payment';
-import { Configs, getAllConfigs } from '@/shared/services/config';
+import { Configs, getAllConfigs } from '@/shared/models/config';
 
 import { getSnowId, getUuid } from '../lib/hash';
 import {
@@ -16,7 +16,7 @@ import {
   CreditTransactionScene,
   CreditTransactionType,
   NewCredit,
-} from './credit';
+} from '../models/credit';
 import {
   findOrderByOrderNo,
   NewOrder,
@@ -26,14 +26,14 @@ import {
   updateOrderByOrderNo,
   updateOrderInTransaction,
   updateSubscriptionInTransaction,
-} from './order';
+} from '../models/order';
 import {
   NewSubscription,
   Subscription,
   SubscriptionStatus,
   UpdateSubscription,
   updateSubscriptionBySubscriptionNo,
-} from './subscription';
+} from '../models/subscription';
 
 /**
  * get payment service with configs

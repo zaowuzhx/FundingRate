@@ -2,12 +2,12 @@ import { redirect } from 'next/navigation';
 
 import { envConfigs } from '@/config';
 import { Empty } from '@/shared/blocks/common';
-import { getPaymentService } from '@/shared/services/payment';
 import {
   findSubscriptionBySubscriptionNo,
   updateSubscriptionBySubscriptionNo,
-} from '@/shared/services/subscription';
-import { getUserInfo } from '@/shared/services/user';
+} from '@/shared/models/subscription';
+import { getUserInfo } from '@/shared/models/user';
+import { getPaymentService } from '@/shared/services/payment';
 
 export default async function RetrieveBillingPage({
   params,

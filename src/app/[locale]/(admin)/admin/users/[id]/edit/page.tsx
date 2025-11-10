@@ -4,7 +4,7 @@ import { PERMISSIONS, requirePermission } from '@/core/rbac';
 import { Empty } from '@/shared/blocks/common';
 import { Header, Main, MainHeader } from '@/shared/blocks/dashboard';
 import { FormCard } from '@/shared/blocks/form';
-import { findUserById, updateUser, UpdateUser } from '@/shared/services/user';
+import { findUserById, updateUser, UpdateUser } from '@/shared/models/user';
 import { Crumb } from '@/shared/types/blocks/common';
 import { Form } from '@/shared/types/blocks/form';
 

@@ -2,7 +2,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { getThemePage } from '@/core/theme';
 import { getMetadata } from '@/shared/lib/seo';
-import { getPostsAndCategories } from '@/shared/services/post';
+import { getPostsAndCategories } from '@/shared/models/post';
 import {
   Blog as BlogType,
   Category as CategoryType,

@@ -1,4 +1,4 @@
-import { Subscription } from '@/shared/services/subscription';
+import { Subscription } from '@/shared/models/subscription';
 import {
   FAQ as FAQType,
   Testimonials as TestimonialsType,

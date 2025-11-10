@@ -5,9 +5,9 @@ import {
   findOrderByOrderNo,
   Order,
   updateOrderByOrderNo,
-} from '@/shared/services/order';
+} from '@/shared/models/order';
+import { getUserInfo } from '@/shared/models/user';
 import { getPaymentService } from '@/shared/services/payment';
-import { getUserInfo } from '@/shared/services/user';
 
 export default async function RetrieveInvoicePage({
   params,

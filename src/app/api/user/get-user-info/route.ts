@@ -1,8 +1,8 @@
 import { PERMISSIONS } from '@/core/rbac';
 import { respData, respErr } from '@/shared/lib/resp';
-import { getRemainingCredits } from '@/shared/services/credit';
+import { getRemainingCredits } from '@/shared/models/credit';
+import { getUserInfo } from '@/shared/models/user';
 import { hasPermission } from '@/shared/services/rbac';
-import { getUserInfo } from '@/shared/services/user';
 
 export async function POST(req: Request) {
   try {

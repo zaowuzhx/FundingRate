@@ -12,15 +12,15 @@ import {
 } from 'ai';
 import { z } from 'zod';
 
-import { findChatById } from '@/shared/services/chat';
+import { findChatById } from '@/shared/models/chat';
 import {
   ChatMessageStatus,
   createChatMessage,
   getChatMessages,
   NewChatMessage,
-} from '@/shared/services/chat_message';
-import { getAllConfigs } from '@/shared/services/config';
-import { getUserInfo } from '@/shared/services/user';
+} from '@/shared/models/chat_message';
+import { getAllConfigs } from '@/shared/models/config';
+import { getUserInfo } from '@/shared/models/user';
 
 export async function POST(req: Request) {
   try {

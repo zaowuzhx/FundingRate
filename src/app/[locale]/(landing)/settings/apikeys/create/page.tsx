@@ -3,12 +3,8 @@ import { getTranslations } from 'next-intl/server';
 import { Empty } from '@/shared/blocks/common';
 import { FormCard } from '@/shared/blocks/form';
 import { getNonceStr, getUuid } from '@/shared/lib/hash';
-import {
-  ApikeyStatus,
-  createApikey,
-  NewApikey,
-} from '@/shared/services/apikey';
-import { getUserInfo } from '@/shared/services/user';
+import { ApikeyStatus, createApikey, NewApikey } from '@/shared/models/apikey';
+import { getUserInfo } from '@/shared/models/user';
 import { Crumb } from '@/shared/types/blocks/common';
 import { Form as FormType } from '@/shared/types/blocks/form';
 

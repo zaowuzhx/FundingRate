@@ -2,10 +2,10 @@ import { envConfigs } from '@/config';
 import { AITaskStatus } from '@/extensions/ai';
 import { getUuid } from '@/shared/lib/hash';
 import { respData, respErr } from '@/shared/lib/resp';
+import { createAITask, NewAITask } from '@/shared/models/ai_task';
+import { consumeCredits, getRemainingCredits } from '@/shared/models/credit';
+import { getUserInfo } from '@/shared/models/user';
 import { getAIService } from '@/shared/services/ai';
-import { createAITask, NewAITask } from '@/shared/services/ai_task';
-import { consumeCredits, getRemainingCredits } from '@/shared/services/credit';
-import { getUserInfo } from '@/shared/services/user';
 
 export async function POST(request: Request) {
   try {

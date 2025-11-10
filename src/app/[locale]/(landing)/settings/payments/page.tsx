@@ -8,8 +8,8 @@ import {
   getOrdersCount,
   Order,
   OrderStatus,
-} from '@/shared/services/order';
-import { getUserInfo } from '@/shared/services/user';
+} from '@/shared/models/order';
+import { getUserInfo } from '@/shared/models/user';
 import { Tab } from '@/shared/types/blocks/common';
 import { type Table } from '@/shared/types/blocks/table';
 

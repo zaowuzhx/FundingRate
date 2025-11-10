@@ -11,7 +11,7 @@ import {
 import { getAuthClient, useSession } from '@/core/auth/client';
 import { useRouter } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
-import { User } from '@/shared/services/user';
+import { User } from '@/shared/models/user';
 
 export interface ContextValue {
   user: User | null;

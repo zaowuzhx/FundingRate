@@ -3,8 +3,8 @@ import { getTranslations } from 'next-intl/server';
 import { AITaskStatus } from '@/extensions/ai';
 import { AudioPlayer, Empty } from '@/shared/blocks/common';
 import { TableCard } from '@/shared/blocks/table';
-import { AITask, getAITasks, getAITasksCount } from '@/shared/services/ai_task';
-import { getUserInfo } from '@/shared/services/user';
+import { AITask, getAITasks, getAITasksCount } from '@/shared/models/ai_task';
+import { getUserInfo } from '@/shared/models/user';
 import { Button, Tab } from '@/shared/types/blocks/common';
 import { type Table } from '@/shared/types/blocks/table';
 

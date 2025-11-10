@@ -1,5 +1,5 @@
 import { respData, respErr } from '@/shared/lib/resp';
-import { getPublicConfigs } from '@/shared/services/config';
+import { getPublicConfigs } from '@/shared/models/config';
 
 export async function POST(req: Request) {
   try {

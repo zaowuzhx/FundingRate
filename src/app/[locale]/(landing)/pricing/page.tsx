@@ -2,8 +2,8 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { getThemePage } from '@/core/theme';
 import { getMetadata } from '@/shared/lib/seo';
-import { getCurrentSubscription } from '@/shared/services/subscription';
-import { getUserInfo } from '@/shared/services/user';
+import { getCurrentSubscription } from '@/shared/models/subscription';
+import { getUserInfo } from '@/shared/models/user';
 import {
   FAQ as FAQType,
   Testimonials as TestimonialsType,

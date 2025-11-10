@@ -5,8 +5,8 @@ import { getAuth } from '@/core/auth';
 import { db } from '@/core/db';
 import { user } from '@/config/db/schema';
 
+import { Permission, Role } from '../services/rbac';
 import { getRemainingCredits } from './credit';
-import { Permission, Role } from './rbac';
 
 export interface UserCredits {
   remainingCredits: number;

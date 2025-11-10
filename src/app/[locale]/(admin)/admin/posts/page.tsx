@@ -3,13 +3,8 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { PERMISSIONS, requirePermission } from '@/core/rbac';
 import { Header, Main, MainHeader } from '@/shared/blocks/dashboard';
 import { TableCard } from '@/shared/blocks/table';
-import {
-  getPosts,
-  getPostsCount,
-  Post,
-  PostType,
-} from '@/shared/services/post';
-import { getTaxonomies } from '@/shared/services/taxonomy';
+import { getPosts, getPostsCount, Post, PostType } from '@/shared/models/post';
+import { getTaxonomies } from '@/shared/models/taxonomy';
 import { Button, Crumb } from '@/shared/types/blocks/common';
 import { type Table } from '@/shared/types/blocks/table';
 

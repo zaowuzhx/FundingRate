@@ -8,7 +8,7 @@ import {
   getTaxonomiesCount,
   TaxonomyType,
   type Taxonomy,
-} from '@/shared/services/taxonomy';
+} from '@/shared/models/taxonomy';
 import { Button, Crumb } from '@/shared/types/blocks/common';
 import { type Table } from '@/shared/types/blocks/table';
 

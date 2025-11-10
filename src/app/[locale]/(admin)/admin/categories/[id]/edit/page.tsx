@@ -9,8 +9,8 @@ import {
   TaxonomyStatus,
   updateTaxonomy,
   UpdateTaxonomy,
-} from '@/shared/services/taxonomy';
-import { getUserInfo } from '@/shared/services/user';
+} from '@/shared/models/taxonomy';
+import { getUserInfo } from '@/shared/models/user';
 import { Crumb } from '@/shared/types/blocks/common';
 import { Form } from '@/shared/types/blocks/form';
 

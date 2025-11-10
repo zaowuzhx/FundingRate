@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 
 import { Empty } from '@/shared/blocks/common';
 import { FormCard } from '@/shared/blocks/form';
-import { getUserInfo, UpdateUser, updateUser } from '@/shared/services/user';
+import { getUserInfo, UpdateUser, updateUser } from '@/shared/models/user';
 import { Form as FormType } from '@/shared/types/blocks/form';
 
 export default async function ProfilePage() {

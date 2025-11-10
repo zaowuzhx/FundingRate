@@ -2,12 +2,12 @@ import { redirect } from 'next/navigation';
 
 import { envConfigs } from '@/config';
 import { PaymentType } from '@/extensions/payment';
-import { findOrderByOrderNo } from '@/shared/services/order';
+import { findOrderByOrderNo } from '@/shared/models/order';
+import { getUserInfo } from '@/shared/models/user';
 import {
   getPaymentService,
   handleCheckoutSuccess,
 } from '@/shared/services/payment';
-import { getUserInfo } from '@/shared/services/user';
 
 export async function GET(req: Request) {
   let redirectUrl = '';

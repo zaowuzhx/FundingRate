@@ -2,7 +2,7 @@ import { and, count, desc, eq } from 'drizzle-orm';
 
 import { db } from '@/core/db';
 import { aiTask } from '@/config/db/schema';
-import { appendUserToResult, User } from '@/shared/services/user';
+import { appendUserToResult, User } from '@/shared/models/user';
 
 import { consumeCredits } from './credit';
 

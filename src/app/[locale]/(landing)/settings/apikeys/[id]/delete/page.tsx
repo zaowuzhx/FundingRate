@@ -7,8 +7,8 @@ import {
   findApikeyById,
   updateApikey,
   UpdateApikey,
-} from '@/shared/services/apikey';
-import { getUserInfo } from '@/shared/services/user';
+} from '@/shared/models/apikey';
+import { getUserInfo } from '@/shared/models/user';
 import { Crumb } from '@/shared/types/blocks/common';
 import { Form as FormType } from '@/shared/types/blocks/form';
 

@@ -4,8 +4,7 @@
     "description": "Awesome projects built with ShipAny"
   },
   "showcases": {
-    "id": "showcase",
-    "block": "showcases-flow",
+    "id": "showcases",
     "groups": [
       {
         "name": "all",

@@ -4,6 +4,7 @@ import { Link } from '@/core/i18n/navigation';
 import { SmartIcon } from '@/shared/blocks/common/smart-icon';
 import { Button } from '@/shared/components/ui/button';
 import { ScrollAnimation } from '@/shared/components/ui/scroll-animation';
+import { cn } from '@/shared/lib/utils';
 import { Section } from '@/shared/types/blocks/landing';
 
 export function CTA({
@@ -14,7 +15,10 @@ export function CTA({
   className?: string;
 }) {
   return (
-    <section id={section.id} className={`py-16 md:py-24 ${className}`}>
+    <section
+      id={section.id}
+      className={cn('py-16 md:py-24', section.className, className)}
+    >
       <div className="container">
         <div className="text-center">
           <ScrollAnimation>

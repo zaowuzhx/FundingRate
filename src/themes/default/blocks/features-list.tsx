@@ -16,7 +16,13 @@ export function FeaturesList({
 }) {
   return (
     // Prevent horizontal scrolling
-    <section className={`overflow-x-hidden py-16 md:py-24 ${className}`}>
+    <section
+      className={cn(
+        'overflow-x-hidden py-16 md:py-24',
+        section.className,
+        className
+      )}
+    >
       <div className="container overflow-x-hidden">
         <div className="flex flex-wrap items-center gap-8 pb-12 md:gap-24">
           <ScrollAnimation direction="left">

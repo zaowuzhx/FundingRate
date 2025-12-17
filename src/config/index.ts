@@ -31,6 +31,17 @@ export const envConfigs = {
   locale: process.env.NEXT_PUBLIC_DEFAULT_LOCALE ?? 'en',
   database_url: process.env.DATABASE_URL ?? '',
   database_provider: process.env.DATABASE_PROVIDER ?? 'postgresql',
+  // PostgreSQL schema name (e.g. 'web'). Default: 'public'
+  db_schema: process.env.DB_SCHEMA ?? 'public',
+  // Drizzle migrations journal table name (avoid conflicts across projects)
+  db_migrations_table:
+    process.env.DB_MIGRATIONS_TABLE ?? '__drizzle_migrations',
+  // Drizzle migrations journal schema (default in drizzle-kit is 'drizzle')
+  // We keep 'public' as template default for stability on fresh Supabase DBs.
+  db_migrations_schema: process.env.DB_MIGRATIONS_SCHEMA ?? 'drizzle',
+  // Output folder for drizzle-kit generated migrations
+  db_migrations_out:
+    process.env.DB_MIGRATIONS_OUT ?? './src/config/db/migrations',
   db_singleton_enabled: process.env.DB_SINGLETON_ENABLED || 'false',
   db_max_connections: process.env.DB_MAX_CONNECTIONS || '1',
   auth_url: process.env.AUTH_URL || process.env.NEXT_PUBLIC_APP_URL || '',

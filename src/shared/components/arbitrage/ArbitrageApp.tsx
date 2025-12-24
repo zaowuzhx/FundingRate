@@ -6,7 +6,7 @@ import HighRates from './HighRates';
 import Followed from './Followed';
 import Calculator from './Calculator';
 
-export default function ArbitrageApp(): JSX.Element {
+export default function ArbitrageApp(): React.ReactElement {
   const [active, setActive] = useState<'high' | 'followed' | 'calc'>('high');
 
   return (

@@ -232,7 +232,7 @@ export default function HighRates() {
   function updateSpotRatio(symbol: string, value: string) {
     const parsed = value === '' ? '' : Number(value);
     setSpotRatioMap((m) => {
-      const next = { ...m, [symbol]: parsed };
+      const next: Record<string, number | ''> = { ...m, [symbol]: parsed };
       try {
         localStorage.setItem(SPOT_RATIO_KEY, JSON.stringify(next));
       } catch (e) {

@@ -12,6 +12,12 @@ export async function proxy(request: NextRequest) {
   // Handle internationalization first
   const intlResponse = intlMiddleware(request);
 
+  // Redirect bare root to /arbitrage (preserve as simple redirect for non-locale root)
+  if (pathname === '/') {
+    const redirectUrl = new URL('/arbitrage', request.url);
+    return NextResponse.redirect(redirectUrl);
+  }
+
   // Extract locale from pathname
   const locale = pathname.split('/')[1];
   const isValidLocale = routing.locales.includes(locale as any);

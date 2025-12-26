@@ -9,7 +9,7 @@ import FundingHistoryModal from './FundingHistoryModal';
 type PositionMap = Record<string, number>;
 
 export default function HighRates() {
-  const { loading, allContractData, lastUpdated, formatDeliveryDate, formatValue, computeAveragesForSymbol } = useFundingData();
+  const { loading, allContractData, lastUpdated, formatDeliveryDate, formatValue, computeAveragesForSymbol, getIntervalHours } = useFundingData();
   const [minAnnualPercent, setMinAnnualPercent] = useState<number | ''>(5);
   const [minVolumeM, setMinVolumeM] = useState<number | ''>(1);
   const [dataType, setDataType] = useState<string>('all');
@@ -377,7 +377,7 @@ export default function HighRates() {
             ) : (
               filtered.map((c, i) => {
                 const position = positions[c.symbol] ?? 500;
-                const intervalHours = 8; // approximate or could expose intervalMap
+                const intervalHours = getIntervalHours ? getIntervalHours(c.symbol) : 8;
                 const rate = Number(c.rate ?? 0);
                 const annualRate = Number(c.annualRate ?? 0);
                 const formattedRate = `${(rate * 100).toFixed(4)}%`;

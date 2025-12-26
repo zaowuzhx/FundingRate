@@ -384,6 +384,7 @@ export default function useFundingData() {
     currentRateDataMap: currentRateDataMapRef.current,
     reload: fetchAndAggregate,
     computeAveragesForSymbol,
+    getIntervalHours: (symbol: string) => intervalMapRef.current.get(symbol) || 8,
   };
 }
 

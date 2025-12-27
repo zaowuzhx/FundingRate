@@ -9,7 +9,7 @@ import FundingHistoryModal from './FundingHistoryModal';
 type PositionMap = Record<string, number>;
 
 export default function HighRates() {
-  const { loading, allContractData, lastUpdated, formatDeliveryDate, formatValue, computeAveragesForSymbol, getIntervalHours } = useFundingData();
+  const { loading, allContractData, lastUpdated, formatDeliveryDate, formatValue, computeAveragesForSymbol, getIntervalHours, error, reload } = useFundingData();
   const [minAnnualPercent, setMinAnnualPercent] = useState<number | ''>(5);
   const [minVolumeM, setMinVolumeM] = useState<number | ''>(1);
   const [dataType, setDataType] = useState<string>('all');
@@ -300,6 +300,12 @@ export default function HighRates() {
       <div className="mb-2 text-sm text-slate-500">
         {loading ? '数据加载中...' : `上次更新时间: ${lastUpdated ? new Date(lastUpdated).toLocaleTimeString() : '-'}`}
       </div>
+
+      {error ? (
+        <div className="mb-3 p-3 rounded bg-red-50 border border-red-200 text-sm text-red-800">
+          数据加载失败：{error}。可能是网络或 CORS 限制，<button className="underline" onClick={() => { try { reload(); } catch {} }}>重试</button> 或查看控制台(Network)获取详细错误。
+        </div>
+      ) : null}
 
       <SummaryCards
         totalPosition={totals.totalPosition}

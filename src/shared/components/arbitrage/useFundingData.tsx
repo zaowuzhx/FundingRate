@@ -55,6 +55,7 @@ function formatValue(value: number | null | undefined, unit = 'M') {
 
 export default function useFundingData() {
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [allContractData, setAllContractData] = useState<ContractData[]>([]);
   const [lastUpdated, setLastUpdated] = useState<number | null>(null);
   const allValidSymbolsRef = useRef<Set<string>>(new Set());
@@ -64,19 +65,30 @@ export default function useFundingData() {
   const timerRef = useRef<number | null>(null);
 
   async function fetchExchangeInfo() {
-    const res = await fetch(EXCHANGE_INFO_URL);
-    const data = await res.json();
-    const symbols = data.symbols || [];
-    const set = new Set<string>();
-    const infoMap = new Map<string, { deliveryDate?: number }>();
-    symbols
-      .filter((s: any) => s.status === 'TRADING' && s.contractType === 'PERPETUAL')
-      .forEach((s: any) => {
-        set.add(s.symbol);
-        infoMap.set(s.symbol, { deliveryDate: s.deliveryDate });
-      });
-    allValidSymbolsRef.current = set;
-    contractExchangeInfoMapRef.current = infoMap;
+    try {
+      const res = await fetch(EXCHANGE_INFO_URL);
+      if (!res.ok) {
+        throw new Error(`exchangeInfo fetch failed: ${res.status}`);
+      }
+      const data = await res.json();
+      const symbols = data.symbols || [];
+      const set = new Set<string>();
+      const infoMap = new Map<string, { deliveryDate?: number }>();
+      symbols
+        .filter((s: any) => s.status === 'TRADING' && s.contractType === 'PERPETUAL')
+        .forEach((s: any) => {
+          set.add(s.symbol);
+          infoMap.set(s.symbol, { deliveryDate: s.deliveryDate });
+        });
+      allValidSymbolsRef.current = set;
+      contractExchangeInfoMapRef.current = infoMap;
+      setError(null);
+    } catch (e: any) {
+      console.error('fetchExchangeInfo error', e);
+      setError(typeof e === 'string' ? e : e?.message ?? 'fetchExchangeInfo failed');
+      // keep previous symbols if any, but rethrow to allow init to handle
+      throw e;
+    }
   }
 
   async function fetchFundingIntervals() {
@@ -253,6 +265,7 @@ export default function useFundingData() {
   async function fetchAndAggregate() {
     setLoading(true);
     try {
+      setError(null);
       const [fundingRatesRaw, spotMap, alphaMap, openInterestMap] = await Promise.all([
         fetchFundingRates(),
         fetchSpot24hrData(),
@@ -332,6 +345,7 @@ export default function useFundingData() {
       setLastUpdated(Date.now());
     } catch (e) {
       console.error('fetchAndAggregate error', e);
+      setError((e as any)?.message ?? 'fetchAndAggregate failed');
     } finally {
       setLoading(false);
     }
@@ -363,6 +377,7 @@ export default function useFundingData() {
         timerRef.current = window.setInterval(fetchAndAggregate, TEN_MINUTES);
       } catch (e) {
         console.error('init error', e);
+        setError((e as any)?.message ?? 'init failed');
       }
     }
     init();
@@ -385,6 +400,7 @@ export default function useFundingData() {
     reload: fetchAndAggregate,
     computeAveragesForSymbol,
     getIntervalHours: (symbol: string) => intervalMapRef.current.get(symbol) || 8,
+    error,
   };
 }
 
